@@ -15,9 +15,9 @@
             <span id="seconds">00</span>
         </div>
         <div class="btn-container pt-5">
-            <button class="btn btn-primary" onclick="startTimer()">Start</button>
-            <button class="btn btn-danger" onclick="stopTimer()">Stop</button>
-            <button class="btn btn-warning" onclick="restartTimer()">Restart</button>
+            <button id="startBtn" class="btn btn-primary" onclick="startTimer()">Start</button>
+            <button id="stopBtn" class="btn btn-danger" disabled="true" onclick="stopTimer()">Stop</button>
+            <button id="restartBtn" class="btn btn-warning" disabled="true" onclick="restartTimer()">Restart</button>
         </div>
         <ul id="timerList" class="p-4"></ul>
     </article>

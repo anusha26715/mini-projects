@@ -2,6 +2,9 @@ const hoursEl = document.getElementById("hours")
 const minutesEl = document.getElementById("minutes")
 const secondsEl = document.getElementById("seconds")
 const timerListEl = document.getElementById("timerList")
+const startBtnEl = document.getElementById("startBtn")
+const stopBtnEl = document.getElementById("stopBtn")
+const restartBtnEl = document.getElementById("restartBtn")
 
 const timerCount = 59
 let hours = 0;
@@ -13,6 +16,9 @@ let isRunning = false;
 function startTimer(){
     if(isRunning) return;
     isRunning = true
+    startBtnEl.disabled = true
+    stopBtnEl.disabled = false
+    restartBtnEl.disabled = false
     secondsInterval = setInterval(()=>{
         seconds++
         if(seconds>timerCount) {
@@ -34,13 +40,14 @@ function startTimer(){
         hoursEl.innerText = hours<10? `0${hours}`:hours
         
     },1000)
-    
 }
 
 function stopTimer(){
     clearInterval(secondsInterval)
     secondsInterval = null;
     isRunning = false;
+    startBtnEl.disabled = false
+    stopBtnEl.disabled = true
     const eachTimerEl = document.createElement('li')
     eachTimerEl.innerText = `${hours} Hr : ${minutes} Min : ${seconds} Sec`
     timerListEl.appendChild(eachTimerEl)
@@ -48,6 +55,7 @@ function stopTimer(){
 
 
 function restartTimer(){
+    stopTimer()
     seconds = 0
     minutes = 0
     hours = 0
