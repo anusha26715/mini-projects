@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <title>Timer</title>
+</head>
+<body>
+    <article class="app-container">
+        <div class="timer-container mt-5">
+            <span id="hours">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+        </div>
+        <div class="btn-container pt-5">
+            <button class="btn btn-primary" onclick="startTimer()">Start</button>
+            <button class="btn btn-danger" onclick="stopTimer()">Stop</button>
+            <button class="btn btn-warning" onclick="restartTimer()">Restart</button>
+        </div>
+        <ul id="timerList" class="p-4"></ul>
+    </article>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
